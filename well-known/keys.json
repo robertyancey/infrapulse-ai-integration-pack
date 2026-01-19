@@ -1,0 +1,9 @@
+{
+  "algorithm": "Ed25519",
+  "active_kid": "2025-02",
+  "keys": {
+    "2025-01": "BASE64_PUBLIC_KEY",
+    "2025-02": "BASE64_PUBLIC_KEY"
+  },
+  "cache_control": "max-age=3600"
+}
