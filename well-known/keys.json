@@ -1,9 +1,14 @@
 {
-  "algorithm": "Ed25519",
-  "active_kid": "2025-02",
-  "keys": {
-    "2025-01": "BASE64_PUBLIC_KEY",
-    "2025-02": "BASE64_PUBLIC_KEY"
-  },
-  "cache_control": "max-age=3600"
+  "keys": [
+    {
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "kid": "kid-1",
+      "x": "PASTE_THE_X_VALUE_FROM_LIVE_HERE",
+      "use": "sig",
+      "alg": "EdDSA",
+      "issuer": "infrapulse.ai"
+    }
+  ],
+  "cache_hint": { "max_age_seconds": 3600 }
 }
