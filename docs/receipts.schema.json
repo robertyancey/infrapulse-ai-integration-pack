@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://infrapulse.ai/schemas/receipt.json",
+  "title": "InfraPulse Signed Receipt",
+  "type": "object",
+  "required": ["kid", "alg", "payload", "signature_b64"],
+  "properties": {
+    "kid": {
+      "type": "string",
+      "description": "Key ID used to sign the receipt."
+    },
+    "alg": {
+      "type": "string",
+      "enum": ["Ed25519"]
+    },
+    "payload": {
+      "type": "object",
+      "required": [
+        "receipt_id",
+        "issued_at",
+        "service",
+        "endpoint",
+        "request_hash_sha256",
+        "cost_cents",
+        "currency",
+        "billed_to"
+      ],
+      "properties": {
+        "receipt_id": { "type": "string" },
+        "issued_at": { "type": "string" },
+        "service": { "type": "string" },
+        "endpoint": { "type": "string" },
+        "request_hash_sha256": { "type": "string" },
+        "cost_cents": { "type": "integer" },
+        "currency": { "type": "string" },
+        "billed_to": { "type": "string" },
+        "idempotency_key": { "type": "string" }
+      }
+    },
+    "signature_b64": {
+      "type": "string",
+      "description": "Base64-encoded Ed25519 signature of the payload."
+    }
+  }
+}
