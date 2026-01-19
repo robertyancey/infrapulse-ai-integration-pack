@@ -1,0 +1,16 @@
+{
+  "kid": "2025-02",
+  "alg": "Ed25519",
+  "payload": {
+    "receipt_id": "rcpt_example_001",
+    "issued_at": "2026-01-18T19:15:00Z",
+    "service": "smart_routing",
+    "endpoint": "/v1/smart-route",
+    "request_hash_sha256": "example_hash",
+    "cost_cents": 30,
+    "currency": "USD",
+    "billed_to": "example-agent",
+    "idempotency_key": "example-idempotency-key"
+  },
+  "signature_b64": "BASE64_SIGNATURE_PLACEHOLDER"
+}
