@@ -1,0 +1,23 @@
+{
+  "service": "InfraPulse",
+  "type": "ai_infrastructure_intelligence",
+  "billing": "prepaid_only",
+  "deterministic_failures": true,
+  "idempotency": {
+    "required": true,
+    "header": "Idempotency-Key"
+  },
+  "links": {
+    "pricing": "https://infrapulse.ai/.well-known/pricing",
+    "keys": "https://infrapulse.ai/.well-known/keys",
+    "openapi": "https://infrapulse.ai/openapi.json",
+    "funding": "https://infrapulse.ai/v1/fund"
+  },
+  "services": [
+    { "name": "infra_health_score", "endpoint": "/v2/infra/health-score" },
+    { "name": "infra_verdict", "endpoint": "/v2/infra/verdict" },
+    { "name": "failure_prediction", "endpoint": "/predict/failure" },
+    { "name": "architecture_analysis", "endpoint": "/v2/architecture/analyze" },
+    { "name": "smart_routing", "endpoint": "/v1/smart-route" }
+  ]
+}
