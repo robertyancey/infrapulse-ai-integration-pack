@@ -21,8 +21,7 @@
         "service",
         "endpoint",
         "request_hash_sha256",
-        "cost_cents",
-        "currency",
+        
         "billed_to"
       ],
       "properties": {
