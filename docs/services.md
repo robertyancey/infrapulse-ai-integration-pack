@@ -1,26 +1,26 @@
-# InfraPulse Services (Machine-Oriented)
+# InfraPulse.ai — Services
 
-All services are **prepaid-only**.
-If insufficient funds exist, InfraPulse returns **HTTP 402 Payment Required**.
+InfraPulse.ai provides protocol-layer infrastructure for autonomous AI agents.
 
-## Infrastructure Health Score
-- Endpoint: `GET /v2/infra/health-score`
-- Purpose: Numeric health signal for autonomous decision-making
+## Core capabilities
+- Agent discovery via machine-readable beacons
+- Cryptographically signed execution receipts
+- Deterministic metering and access enforcement (HTTP 402)
+- Agent-to-agent (A2A) interoperability primitives
 
-## Infrastructure Verdict
-- Endpoint: `GET /v2/infra/verdict`
-- Purpose: Deterministic pass/fail gate for automation
+## What this is
+A neutral software and protocol layer enabling AI systems to:
+- discover services
+- verify execution
+- account for usage
+- operate autonomously with human approval
 
-## Failure Prediction
-- Endpoint: `POST /predict/failure`
-- Purpose: Predict probability of infrastructure failure
+## What this is not
+- Not a civil or physical infrastructure monitoring system
+- Not predictive maintenance for roads, bridges, utilities, or cities
+- Not affiliated with infrapulse.pl
 
-## Architecture Analysis
-- Endpoint: `POST /v2/architecture/analyze`
-- Purpose: Identify architectural risks and bottlenecks
-
-## Smart Routing
-- Endpoint: `POST /v1/smart-route`
-- Purpose: Deterministic provider/model routing
-- Requires header: `Idempotency-Key`
-- Returns: signed execution receipt
+## Canonical specifications
+- https://infrapulse.ai/.well-known/asp.json
+- https://infrapulse.ai/.well-known/beacon.json
+- https://infrapulse.ai/.well-known/pricing.json
