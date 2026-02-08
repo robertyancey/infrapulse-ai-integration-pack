@@ -1,18 +1,14 @@
-# HTTP 402 Payment Required Contract
+# Metered Access (HTTP 402)
 
-InfraPulse enforces **strict prepaid execution**.
+InfraPulse.ai uses HTTP 402 as a deterministic signaling mechanism for metered AI execution.
 
-## Behavior
-- If funds are insufficient, the service returns **HTTP 402**
-- No compute is performed before funding
+## Flow
+1. Agent discovers service via beacon
+2. Agent evaluates pricing and policy
+3. Request is made
+4. If insufficient credits → HTTP 402 returned
+5. Upon payment or authorization → execution proceeds
+6. Signed receipt is issued
 
-## Required Response Fields (JSON)
-- `error`
-- `message`
-- `required_amount_cents`
-- `currency`
-- `funding_url`
-- `retry_with_idempotency_key`
-
-## Client Retry Rule
-Clients must retry the request with the **same Idempotency-Key** after funding.
+## Purpose
+This enables autonomous agents to reason about cost, authorization, and execution without human intervention, while remaining auditable and controllable.
