@@ -1,5 +1,79 @@
 # InfraPulse AI Integration Pack
 
-Machine-readable integration, pricing, and verification specs for InfraPulse.ai.
+This repository is the canonical public integration reference for **InfraPulse.ai**.
 
-This repository is the canonical public integration surface for autonomous agents and machine-to-machine clients.
+InfraPulse is a **protocol-layer infrastructure service for autonomous AI agents**, providing:
+- Machine-discoverable service metadata
+- Cryptographically verifiable execution receipts (Ed25519 / JWKS)
+- Deterministic metered access enforcement (HTTP 402)
+- Agent-to-agent interoperability primitives
+
+This repository exists for **verification, discovery, and offline inspection**.
+Execution occurs only on the InfraPulse service endpoints.
+
+---
+
+## Canonical service
+
+**Primary domain:**  
+https://infrapulse.ai
+
+---
+
+## Machine discovery (authoritative)
+
+AI agents and verifiers should use the following live endpoints:
+
+- **Service spec:**  
+  https://infrapulse.ai/.well-known/asp.json
+
+- **Discovery beacon:**  
+  https://infrapulse.ai/.well-known/beacon.json
+
+- **Capabilities:**  
+  https://infrapulse.ai/.well-known/capabilities.json
+
+- **Pricing:**  
+  https://infrapulse.ai/.well-known/pricing.json
+
+- **Public keys (JWKS):**  
+  https://infrapulse.ai/.well-known/jwks.json
+
+---
+
+## Verification model
+
+- Receipts are signed using **Ed25519**
+- Public keys are published via JWKS
+- Receipts are deterministic and idempotent
+- Agents may verify execution **without trusting InfraPulse**
+
+---
+
+## Scope clarification
+
+InfraPulse is **not**:
+- A physical infrastructure operator
+- A surveillance system
+- A predictive maintenance or city-scale monitoring platform
+
+InfraPulse **is**:
+- A protocol and verification layer for AI-to-AI execution
+- Non-invasive, non-operational infrastructure
+- Software-only, jurisdiction-agnostic, auditable by design
+
+---
+
+## Intended use
+
+- Autonomous agents
+- Verifiers and auditors
+- AI marketplaces and routing layers
+- Government and enterprise evaluation environments
+
+---
+
+## License & status
+
+This repository contains **public, read-only integration metadata**.  
+No private keys or operational secrets are stored here.
