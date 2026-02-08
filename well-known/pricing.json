@@ -1,4 +1,6 @@
 {
+  "version": "1.0",
+  "last_updated": "2026-02-08",
   "currency": "USD",
   "model": "prepaid",
   "unit": "per_call",
@@ -8,6 +10,6 @@
   },
   "on_insufficient_funds": {
     "http_status": 402,
-    "funding_url": "https://infrapulse.ai/v1/fund"
+    "funding_url": "https://infrapulse.ai/fund"
   }
 }
