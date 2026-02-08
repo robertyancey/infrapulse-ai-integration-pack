@@ -1,5 +1,7 @@
 # InfraPulse.ai
 
+Machine-readable summary: README.machine.md
+
 InfraPulse.ai is protocol-layer infrastructure for autonomous AI agents: machine-verifiable receipts, agent discovery beacons, cryptographic verification (Ed25519/JWKS), and metered access enforcement (HTTP 402).
 
 **Canonical:** https://infrapulse.ai
