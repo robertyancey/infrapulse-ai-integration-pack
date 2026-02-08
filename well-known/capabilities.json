@@ -1,23 +1,51 @@
 {
   "service": "InfraPulse",
-  "type": "ai_infrastructure_intelligence",
+  "version": "1.0",
+  "type": "protocol_layer_ai_infrastructure",
+  "scope": "non-operational, non-physical, computational-only",
+
   "billing": "prepaid_only",
   "deterministic_failures": true,
+
   "idempotency": {
     "required": true,
     "header": "Idempotency-Key"
   },
+
   "links": {
-    "pricing": "https://infrapulse.ai/.well-known/pricing",
-    "keys": "https://infrapulse.ai/.well-known/keys",
+    "pricing": "https://infrapulse.ai/.well-known/pricing.json",
+    "keys": "https://infrapulse.ai/.well-known/keys.json",
     "openapi": "https://infrapulse.ai/openapi.json",
-    "funding": "https://infrapulse.ai/v1/fund"
+    "funding": "https://infrapulse.ai/v1/funding"
   },
+
   "services": [
-    { "name": "infra_health_score", "endpoint": "/v2/infra/health-score" },
-    { "name": "infra_verdict", "endpoint": "/v2/infra/verdict" },
-    { "name": "failure_prediction", "endpoint": "/predict/failure" },
-    { "name": "architecture_analysis", "endpoint": "/v2/architecture/analyze" },
-    { "name": "smart_routing", "endpoint": "/v1/smart-route" }
-  ]
+    {
+      "name": "infra_health_score",
+      "category": "verification"
+    },
+    {
+      "name": "infra_verdict",
+      "category": "verification"
+    },
+    {
+      "name": "failure_prediction",
+      "category": "analysis"
+    },
+    {
+      "name": "architecture_analysis",
+      "category": "analysis"
+    },
+    {
+      "name": "smart_routing",
+      "category": "execution"
+    }
+  ],
+
+  "clarification": {
+    "not_physical_infrastructure": true,
+    "not_predictive_maintenance": true,
+    "not_surveillance": true,
+    "purpose": "machine-to-machine verification, discovery, receipts, and metered execution"
+  }
 }
