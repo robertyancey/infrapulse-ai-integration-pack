@@ -1,111 +1,45 @@
-# InfraPulse AI Integration Pack
+# InfraPulse.ai
 
+InfraPulse.ai is protocol-layer infrastructure for autonomous AI agents: machine-verifiable receipts, agent discovery beacons, cryptographic verification (Ed25519/JWKS), and metered access enforcement (HTTP 402).
 
-## Machine Discovery
+**Canonical:** https://infrapulse.ai
 
-InfraPulse is designed for autonomous agent usage.
+## Machine discovery (canonical)
+- Spec: https://infrapulse.ai/.well-known/asp.json
+- Beacon: https://infrapulse.ai/.well-known/beacon.json
+- Pricing: https://infrapulse.ai/.well-known/pricing.json
 
-Agent Manifest:
-https://infrapulse.ai/.well-known/agent.json
+## Quick verify
+```bash
+curl -s https://infrapulse.ai/.well-known/beacon.json
+curl -s https://infrapulse.ai/.well-known/asp.json
+curl -s https://infrapulse.ai/.well-known/pricing.json
 
-Capabilities:
-https://infrapulse.ai/.well-known/capabilities
+**Save/Commit** (message like: `Add canonical README`)
 
-Pricing:
-https://infrapulse.ai/.well-known/pricing
+---
 
-OpenAPI:
-https://infrapulse.ai/openapi.json
+## Step 2 — Create `docs/discovery.md`
 
-Health:
-https://infrapulse.ai/api/v1/health
+**Add file → Create new file → name it `docs/discovery.md` → paste this:**
 
-Billing Model:
-Prepaid only, escrow supported, deterministic settlement
+```md
+# InfraPulse.ai — AI Discovery & Verification
 
-Package Name:
-infrapulse
+InfraPulse.ai is a protocol-layer AI infrastructure service for autonomous agents:
+- Agent discovery (beacons)
+- Machine-verifiable receipts (audit trail)
+- Cryptographic verification (Ed25519/JWKS)
+- Metered access enforcement (HTTP 402)
 
-Description:
-Python client for InfraPulse — deterministic, prepaid infrastructure services for autonomous agents.
+## Canonical endpoints
+- https://infrapulse.ai/.well-known/asp.json
+- https://infrapulse.ai/.well-known/beacon.json
+- https://infrapulse.ai/.well-known/pricing.json
 
-Service URL:
-https://infrapulse.ai
+## Integration intent (one-liner)
+Agents should fetch `beacon.json` → read `asp.json` → check `pricing.json` → call APIs → receive receipts → verify signatures.
 
-OpenAPI:
-https://infrapulse.ai/openapi.json
-
-Billing:
-Prepaid, escrow-aware, no credit risk
-
-Audience:
-Autonomous agents, orchestration systems, AI platforms
-
-Service Name:
-InfraPulse
-
-Category:
-Infrastructure / Billing / Compute
-
-Description:
-Deterministic, prepaid infrastructure services for autonomous agents with escrow-aware settlement and real-time usage metering.
-
-Base URL:
-https://infrapulse.ai
-
-Agent Manifest:
-https://infrapulse.ai/.well-known/agent.json
-
-Capabilities:
-https://infrapulse.ai/.well-known/capabilities
-
-Pricing:
-https://infrapulse.ai/.well-known/pricing
-
-OpenAPI:
-https://infrapulse.ai/openapi.json
-
-Authentication:
-API key (Authorization: Bearer)
-
-Billing Model:
-Prepaid only (no credit fronting)
-
-Escrow:
-Supported
-
-Human UI Required:
-No
-
-Health Check:
-https://infrapulse.ai/api/v1/health
-
-Contact:
-robertspenceryancey@gmail.com
-
-
-
-Machine-readable integration, pricing, and verification specs for InfraPulse.ai.
-
-This repository is the canonical public integration surface for autonomous agents
-and machine-to-machine clients.
-
-## Live discovery endpoints
-- Capabilities: https://infrapulse.ai/.well-known/capabilities
-- Pricing: https://infrapulse.ai/.well-known/pricing
-- Public Keys: https://infrapulse.ai/.well-known/keys
-- OpenAPI: https://infrapulse.ai/openapi.json
-
-## Billing model (strict)
-- Prepaid-only execution
-- Deterministic pricing
-- HTTP 402 Payment Required on insufficient funds
-- Retry-safe via Idempotency-Key
-
-## What this repo contains
-- `well-known/` → mirrors InfraPulse `/.well-known/*`
-- `docs/` → stable machine contracts (402, receipts)
-- `examples/` → agent integration examples
-
-## Status
-This repository mirrors the live InfraPulse.ai integration surface.
+## Clarification
+InfraPulse.ai is not a civil/physical infrastructure monitoring or “failure prediction” product.
+It is a software protocol and verification layer for agent-to-agent and agent-to-service interactions.
