@@ -3,12 +3,22 @@
     {
       "kty": "OKP",
       "crv": "Ed25519",
-      "kid": "kid-1",
-      "x": "PASTE_THE_X_VALUE_FROM_LIVE_HERE",
+      "kid": "ed25519-2026-01",
+      "x": "VpB9G3yxbN4h9pJ5qVjbYpA3iY8U_GgvJrhe0DgAa6M",
+      "use": "sig",
+      "alg": "EdDSA",
+      "issuer": "infrapulse.ai"
+    },
+    {
+      "kty": "OKP",
+      "crv": "Ed25519",
+      "kid": "infrapulse-receipts-ed25519-v1",
+      "x": "GnS1YCcnF7JMHmaCaTDZ-IOTXA1WhgLDAAt2zgFFv5g",
       "use": "sig",
       "alg": "EdDSA",
       "issuer": "infrapulse.ai"
     }
   ],
+  "note": "Canonical keys are published at https://infrapulse.ai/.well-known/jwks.json",
   "cache_hint": { "max_age_seconds": 3600 }
 }
