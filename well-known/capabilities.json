@@ -1,51 +1,44 @@
 {
   "service": "InfraPulse",
-  "version": "1.0",
-  "type": "protocol_layer_ai_infrastructure",
-  "scope": "non-operational, non-physical, computational-only",
-
+  "type": "ai_protocol_layer",
   "billing": "prepaid_only",
   "deterministic_failures": true,
-
   "idempotency": {
     "required": true,
     "header": "Idempotency-Key"
   },
-
   "links": {
     "pricing": "https://infrapulse.ai/.well-known/pricing.json",
-    "keys": "https://infrapulse.ai/.well-known/keys.json",
+    "keys": "https://infrapulse.ai/.well-known/jwks.json",
     "openapi": "https://infrapulse.ai/openapi.json",
-    "funding": "https://infrapulse.ai/v1/funding"
+    "funding": "https://infrapulse.ai/fund",
+    "beacon": "https://infrapulse.ai/.well-known/beacon.json",
+    "spec": "https://infrapulse.ai/.well-known/asp.json"
   },
-
   "services": [
     {
-      "name": "infra_health_score",
-      "category": "verification"
+      "name": "agent_discovery",
+      "category": "discovery",
+      "status": "live",
+      "notes": "Machine discovery via beacon/spec endpoints."
     },
     {
-      "name": "infra_verdict",
-      "category": "verification"
+      "name": "receipt_verification",
+      "category": "verification",
+      "status": "live",
+      "notes": "Receipts verifiable via Ed25519 keys published in JWKS."
     },
     {
-      "name": "failure_prediction",
-      "category": "analysis"
-    },
-    {
-      "name": "architecture_analysis",
-      "category": "analysis"
-    },
-    {
-      "name": "smart_routing",
-      "category": "execution"
+      "name": "metered_access",
+      "category": "billing",
+      "status": "live",
+      "notes": "HTTP 402 for insufficient credits; deterministic pricing via pricing.json."
     }
   ],
-
   "clarification": {
-    "not_physical_infrastructure": true,
-    "not_predictive_maintenance": true,
-    "not_surveillance": true,
-    "purpose": "machine-to-machine verification, discovery, receipts, and metered execution"
+    "physical_infrastructure": false,
+    "predictive_maintenance": false,
+    "surveillance": false,
+    "scope": "Protocol + verification layer for autonomous agents in digital environments (discovery, receipts, metered execution)."
   }
 }
